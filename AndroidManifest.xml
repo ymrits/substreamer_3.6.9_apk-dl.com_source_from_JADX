@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:"http://schemas.android.com/apk/res/android" android:versionCode="3690000" android:versionName="3.6.9" android:hardwareAccelerated="true" package="com.ghenry22.substream2" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="25" />
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:resizeable="true" android:xlargeScreens="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <meta-data android:name="android.support.VERSION" android:value="26.0.0-alpha1" />
+    <application android:label="@string/app_name" android:icon="@mipmap/icon" android:hardwareAccelerated="true" android:supportsRtl="true">
+        <activity android:theme="@*android:style/Theme.DeviceDefault.NoActionBar" android:label="@string/activity_name" android:name="com.ghenry22.substream2.MainActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenSize" android:windowSoftInputMode="10">
+            <intent-filter android:label="@string/launcher_name">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.homerours.musiccontrols.MusicControlsNotificationKiller" />
+        <receiver android:name="cordova.plugins.Diagnostic$LocationProviderChangedReceiver">
+            <intent-filter>
+                <action android:name="android.location.PROVIDERS_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cordova.plugins.Diagnostic$NFCStateChangedReceiver">
+            <intent-filter>
+                <action android:name="android.nfc.action.ADAPTER_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
